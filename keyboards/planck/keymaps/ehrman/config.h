@@ -1,0 +1,16 @@
+#pragma once
+#define ORYX_CONFIGURATOR
+
+#undef TAPPING_TERM
+#define TAPPING_TERM 150
+#define TAPPING_TOGGLE 1
+#define FORCE_NKRO
+
+#define PLANCK_EZ_LED_LOWER 1
+#define PLANCK_EZ_LED_RAISE 2
+#define PLANCK_EZ_LED_ADJUST 3
+/* 
+ * #define COMBO_TERM 60
+ * #define COMBO_NO_TIMER
+ * #define IGNORE_MOD_TAP_INTERRUPT
+*/
