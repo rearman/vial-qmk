@@ -1,30 +1,31 @@
 #include QMK_KEYBOARD_H
 
 enum re_keycode {
-	RE_COLN = USER00,
+	RE_COLN = QK_KB_0,
 	RE_LPRN,
 	RE_RPRN,
 	RE_9,
 	RE_0,
 	RE_TILDE,
 };
+
 #define RE_ESC	LGUI_T(KC_ESC)
-#define RE_TH	UC(THORN)
-#define RE_NG	UC(ENG)
+#define RE_LSFT	LSFT_T(KC_CAPS)
+#define RE_RSFT	RSFT_T(KC_CAPS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_60_hhkb(
-			     RE_ESC,	KC_1,		KC_2,		KC_3,	KC_4,	KC_5,	KC_6,	KC_7,	KC_8,	RE_9,	RE_0,	KC_LBRC,	KC_RBRC,	KC_BSLS,	RE_TILDE,
+			     RE_ESC,	RE_TILDE,	KC_7,		KC_5,		KC_3,	KC_1,	RE_9,	RE_0,	KC_2,	KC_4,	KC_6,	KC_8,	RE_LPRN,	RE_LPRN,	KC_BSLS,	
 			     KC_TAB,	KC_QUOT,	KC_COMM,	KC_DOT,	KC_P,	KC_Y,	KC_F,	KC_G,	KC_C,	KC_R,	KC_L,	KC_SLSH,	KC_EQL,		KC_BSPC,
 			     KC_DEL,	KC_A,		KC_O,		KC_E,	KC_U,	KC_I,	KC_D,	KC_H,	KC_T,	KC_N,	KC_S,	KC_MINS,	KC_ENT,
-			     KC_LSFT,	KC_COLN,	KC_Q,		KC_J,	KC_K,	KC_X,	KC_B,	KC_M,	KC_W,	KC_V,	KC_Z,	KC_RSFT,	TT(1),
+			     RE_LSFT,	RE_COLN,	KC_Q,		KC_J,	KC_K,	KC_X,	KC_B,	KC_M,	KC_W,	KC_V,	KC_Z,	RE_RSFT,	TT(1),
 			     KC_LALT,	KC_LCTL,	KC_SPC,	KC_RCTL,	KC_RALT
 			     ),
 
 	[1] = LAYOUT_60_hhkb(
-			     KC_TRNS,	KC_F1,		KC_F2,	KC_F3,	KC_F4,		KC_F5,		KC_F6,	KC_F7,	KC_F8,	KC_F9,	KC_F10,		KC_F11,		KC_F12,	KC_NO,	MO(2),
+			     KC_TRNS,	KC_F11,		KC_F7,	KC_F5,	KC_F3,		KC_F1,		KC_F9,	KC_F10,	KC_F2,	KC_F4,	KC_F6,		KC_F8,		KC_F12,	KC_NO,	MO(2),
 			     KC_TRNS,	KC_NO,		KC_NO,	KC_NO,	KC_PSCR,	KC_NO,		KC_NO,	KC_NO,	KC_NO,	KC_NO,	KC_NO,		KC_UP,		KC_NO,	KC_NO,
-			     KC_INS,	KC_HOME,	KC_NO,	KC_END,	KC_PGUP,	KC_PGDN,	KC_NO,	RE_TH,	RE_NG,	KC_NO,	KC_LEFT,	KC_RGHT,	KC_TRNS,
+			     KC_INS,	KC_HOME,	KC_NO,	KC_END,	KC_PGUP,	KC_NO,	KC_PGDN,	KC_NO,	KC_NO,	KC_NO,	KC_LEFT,	KC_RGHT,	KC_TRNS,
 			     KC_TRNS,	KC_NO,		KC_NO,	KC_NO,	KC_NO,		KC_NO,		KC_NO,	KC_APP,	KC_NO,	KC_NO,	KC_DOWN,	KC_TRNS,	KC_TRNS,
 			     KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS
 			     ),
@@ -118,13 +119,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 		return true;
 	}
 }
-/* UNICODE INPUT */
-enum unicode_names {
-	THORN,
-	ENG
-};
-
-const uint32_t PROGMEM unicode_map[] = {
-	[THORN]	= 0x00FE, // þ
-	[ENG]	= 0x014A, // Ŋ ŋ
-};

@@ -1,34 +1,34 @@
 {
     "customKeycodes": [
         {
-            "name": ";\n:",
+            "name": "RE_COLN",
             "title": "Colon/Semicolon",
-            "shortName": "RE_COLN"
+            "shortName": ";\n:"
         },
         {
-            "name": "[\n(",
+            "name": "RE_LPRN",
             "title": "Left Par/Bkt",
-            "shortName": "RE_LPRN"
+            "shortName": "[\n("
         },
         {
-            "name": "]\n)",
+            "name": "RE_RPRN",
             "title": "Right Par/Bkt",
-            "shortName": "RE_RPRN"
+            "shortName": "]\n)"
         },
         {
-            "name": "{\n9",
+            "name": "RE_9",
             "title": "9/Left Curl",
-            "shortName": "RE_9"
+            "shortName": "{\n9"
         },
         {
-            "name": "}\n0",
+            "name": "RE_0",
             "title": "0/Right Curl",
-            "shortName": "RE_0"
+            "shortName": "}\n0"
         },
         {
-            "name": "`\n~",
+            "name": "RE_TILDE",
             "title": "Tilde/Grave",
-            "shortName": "RE_TILDE"
+            "shortName": "`\n~"
         }
 
     ],
